@@ -148,11 +148,11 @@ Creates Python virtualenv_exec.
 
 **command** - The command you want to run in the virtualenv
 
-**execunless** - Do not execute the command if eval is true. Default false
+**exec_unless** - Do not execute the command if eval is true. Default false
 
 	python::virtualenv_exec { '/var/www/project1':
 	  command      => 'django-admin.py collectstatic --settings=peer.settings',
-	  execunless  => 'ls /tmp/foo >/dev/null',
+	  exec_unless  => 'ls /tmp/foo >/dev/null',
 	}
 
 ### python::gunicorn
