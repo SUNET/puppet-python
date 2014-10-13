@@ -136,6 +136,25 @@ Creates Python virtualenv.
 	  timeout      => 0,
 	}
 
+### python::virtualenv_exec
+
+Creates Python virtualenv_exec.
+
+**environment** - Additional environment variables required to install the packages. Default: none
+
+**path** -  Specifies the PATH variable. Default: [ '/bin', '/usr/bin', '/usr/sbin' ]
+
+**cwd** - The directory from which to run the "pip install" command. Default: /tmp
+
+**command** - The command you want to run in the virtualenv
+
+**execunless** - Do not execute the command if eval is true. Default false
+
+	python::virtualenv { '/var/www/project1':
+	  command      => 'django-admin.py collectstatic --settings=peer.settings',
+	  execunless  => 'ls /tmp/foo >/dev/null',
+	}
+
 ### python::gunicorn
 
 Manages Gunicorn virtual hosts.

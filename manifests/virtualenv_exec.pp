@@ -39,7 +39,7 @@ define python::virtualenv_exec (
   $path         = [ '/bin', '/usr/bin', '/usr/sbin','/usr/local/bin' ],
   $cwd          = "/tmp",
   $command      = '',
-  $exec_unless  = 'false',
+  $execunless  = 'false',
 ) {
 
   $venv_dir = $name
@@ -50,6 +50,6 @@ define python::virtualenv_exec (
     path        => $path,
     cwd         => $cwd,
     environment => $environment,
-    unless      => $exec_unless,
+    unless      => $execunless,
   }
 }
