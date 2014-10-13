@@ -150,7 +150,7 @@ Creates Python virtualenv_exec.
 
 **execunless** - Do not execute the command if eval is true. Default false
 
-	python::virtualenv { '/var/www/project1':
+	python::virtualenv_exec { '/var/www/project1':
 	  command      => 'django-admin.py collectstatic --settings=peer.settings',
 	  execunless  => 'ls /tmp/foo >/dev/null',
 	}

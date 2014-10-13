@@ -16,22 +16,18 @@
 # [*command*]
 # The command you want to run in the virtualenv
 #
-# [*exec_unless*]
+# [*execunless*]
 # Do not execute the command if eval is true. Default false
 #
 # === Examples
 #
 # python::virtualenv { '/var/www/project1':
 #   command      => 'django-admin.py collectstatic --settings=peer.settings',
-#   exec_unless  => 'ls /tmp/foo >/dev/null',
+#   execunless  => 'ls /tmp/foo >/dev/null 2>&1',
 # }
 #
 # === Authors
 #
-# Sergey Stankevich
-# Ashley Penney
-# Marc Fournier
-# Fotis Gimian
 # Anders Lördal
 #
 define python::virtualenv_exec (
